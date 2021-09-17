@@ -1,4 +1,6 @@
 #!/bin/bash
+git remote remove origin
+git remote add origin https://abhinavvashishat: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@github.com/abhinavvashishat/react-native-starter.git
 
 #get highest tag number
 VERSION=`git describe --abbrev=0 --tags`
@@ -27,9 +29,9 @@ if [ -z "$NEEDS_TAG" ]; then
     git commit -m "Adding new Tag"
     git tag $NEW_TAG
     echo "Tagged with $NEW_TAG"
-    git remote remove origin
+    #git remote remove origin
     #git remote add origin https://abhinavvashishat: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@github.com/abhinavvashishat/react-native-starter.git
-    git push https://abhinavvashishat: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@github.com/abhinavvashishat/react-native-starter.git $NEW_TAG
+    git push https://abhinavvashishat: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@github.com/abhinavvashishat/react-native-starter.git origin -b master $NEW_TAG
 else
     echo "Already a tag on this commit"
 fi
