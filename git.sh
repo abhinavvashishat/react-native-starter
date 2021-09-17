@@ -23,12 +23,10 @@ NEEDS_TAG=`git describe --contains $GIT_COMMIT 2>/dev/null`
 
 #only tag if no tag already
 if [ -z "$NEEDS_TAG" ]; then
-    git add .
-    git commit -m "Adding new Tag"
     git tag $NEW_TAG
     echo "Tagged with $NEW_TAG"
     #git remote remove origin
-    git remote set-url origin https://abhinavvashishat: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@github.com/abhinavvashishat/react-native-starter.git
+    #git remote set-url origin https://abhinavvashishat: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@github.com/abhinavvashishat/react-native-starter.git
     #git remote add origin https://abhinavvashishat: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@github.com/abhinavvashishat/react-native-starter.git
     git push --set-upstream -f --tag origin https://abhinavvashishat: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@github.com/abhinavvashishat/react-native-starter.git $NEW_TAG
 else
