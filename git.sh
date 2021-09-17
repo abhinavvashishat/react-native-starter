@@ -24,8 +24,7 @@ NEEDS_TAG=`git describe --contains $GIT_COMMIT 2>/dev/null`
 #only tag if no tag already
 if [ -z "$NEEDS_TAG" ]; then
     git tag $NEW_TAG
-    echo "Tagged with $NEW_TAG"
-   https://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@github.com/abhinavvashishat/react-native-starter.git
+    echo "Tagged with $NEW_TAG
     git push origin $NEW_TAG
 else
     echo "Already a tag on this commit"
